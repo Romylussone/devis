@@ -1,0 +1,139 @@
+<!-- Login & Register Form -->
+<div class="modal fade" id="login-register-modal" tabindex="-1" role="dialog" 
+  aria-labelledby="login-register" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:2rem;">
+              <button type="button" 
+                      class="close text-danger"
+                      style="position:absolute;right:1rem;" 
+                      data-dismiss="modal" 
+                      aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="row">
+                <div class="col-md-7" style="border-right : 2px solid #64a19d">
+                  <img src = "./img/mohammed6.jpg" 
+                       class="img-responsive img-thumbnail" 
+                       style="width:100%;height:95%;" 
+                       alt="batiment"/>
+                  <p class="text-center mt-3"> 
+                    <span style="padding:2rem;border-radius:50%;background:white;">
+                       <a title="visite anonyme" 
+                          href="{{url("visite-hall")}}"> 
+                            <i class="fas fas fa-door-open" > </i> 
+                       </a>
+                    </span>
+                  </p>
+                </div>
+
+                <!-- Formulaire de Connexion -->
+                <div class="col-md-5" style="display:none;">                  
+                   <form>
+                     <legend class="text-center mb-2 text-primary"> <span style="color:black;"> Connexion </span> /  
+                        <a href="#"> Inscription </a>
+                      </legend>
+                    <div class="form-group mt-3">
+                      <label for="formGroupExampleInput" style="font-size:0.8em;color:#64a19d;">Login </label>
+                      <input type="text" 
+                             class="form-control" id="formGroupExampleInput" placeholder="Login...">
+                    </div>
+                    <div class="form-group mt-3">
+                      <label for="formGroupExampleInput2" style="font-size:0.8em;color:#64a19d;">Mot de Passe </label>
+                      <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Mot de Passe...">
+                    </div>
+                    <hr/>
+                    <div class="container-fluid">
+                      <div class="row mb-2">
+                        <div class="col-md-12">
+                          <a href="#" class="btn btn-user btn-block btn-primary text-white">
+                           Se Connecter 
+                          </a>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <a href="#" class="btn btn-google btn-user btn-block text-danger" 
+                                        style="border: 1px solid red;">
+                              <i class="fab fa-google fa-fw"></i> Google
+                            </a>
+                          </div>
+                          <div class="col-md-6">
+                            <a href="#" class="btn btn-facebook btn-user btn-block " 
+                                        style="color:#3b5998;border: 1px solid #3b5998;">
+                              <i class="fab fa-facebook-f fa-fw"></i> facebook
+                            </a>                        
+                          </div>
+                      </div>
+                      <div class="row mt-5">
+                        <div class="col-md-12 text-center">
+                          <a href="#">Mot de passe oublié <span class="fas fa-question-circle"></span> </a>
+                        </div>
+                      </div>
+                    </div> 
+                  </form>
+                </div>
+
+                <!-- Formulaire inscription -->
+                <div class="col-md-5">                  
+                   <form>
+                     <legend class="text-center mb-2 text-primary"><a href="#"> Connexion  </a>  /  
+                         <span style="color:black;"> Inscription </span>
+                      </legend>
+                    <div class="form-group mt-3">
+                      <label for="formGroupExampleInput" style="font-size:0.8em;color:#64a19d;">Nom </label>
+                      <input type="text" 
+                             class="form-control" id="formGroupExampleInput" placeholder="Nom...">
+                    </div>
+                    <div class="form-group mt-3">
+                      <label for="formGroupExampleInput2" style="font-size:0.8em;color:#64a19d;">Prenoms</label>
+                      <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Prenoms...">
+                    </div>
+                    <div class="form-group mt-3">
+                      <label for="formGroupExampleInput2" style="font-size:0.8em;color:#64a19d;">Email</label>
+                      <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Email...">
+                    </div>
+                    <hr/>
+                    <div class="container-fluid">
+                      <div class="row mb-2">
+                          <div class="col-md-6">
+                            <a href="#" class="btn btn-google btn-user btn-block text-danger" 
+                                        style="border: 1px solid red;">
+                              <i class="fab fa-google fa-fw"></i> Google
+                            </a>
+                          </div>
+                          <div class="col-md-6">
+                            <a href="#" class="btn btn-facebook btn-user btn-block " 
+                                        style="color:#3b5998;border: 1px solid #3b5998;">
+                              <i class="fab fa-facebook-f fa-fw"></i> facebook
+                            </a>                        
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <a href="#" class="btn btn-user btn-block btn-primary text-white">
+                           Suivant
+                          </a>
+                        </div>
+                      </div>
+                      {{-- <div class="row mt-2">
+                        <div class="col-md-12">
+                          <a href="{{url("visite-hall")}}" class="btn btn-user btn-block btn-primary text-primary"
+                             style="background: transparent;border:1px solid #64a19d; padding-top:10px
+                                    ;padding-bottom:10px;">
+                           Visite Anonyme
+                          </a>
+                        </div>
+                      </div> --}}
+                    </div> 
+                  </form>
+                </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+</div>
