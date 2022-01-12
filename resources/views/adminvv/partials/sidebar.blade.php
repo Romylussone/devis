@@ -59,7 +59,7 @@
         <span class="menu-title">Commandes</span>
         <i class="menu-arrow"></i>
         <i class=" mdi mdi mdi mdi-briefcase-upload menu-icon"></i>
-      </a>r
+      </a>
       <div class="collapse" id="ui-cmd">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="#" blink="{{--route('admin-ajouter-ecole')--}}">Les Commandes</a></li>
