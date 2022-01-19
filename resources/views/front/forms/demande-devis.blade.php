@@ -7,10 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!--=============================Fichier css formulaire  ===============================================================-->
-<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-<link rel="stylesheet" href="fonts/linearicons/style.css">
-<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
-<link rel="stylesheet" href="/css/front/form/style.css">
+<link rel="stylesheet" href="{{url('fonts/material-design-iconic-font/css/material-design-iconic-font.css')}}">
+<link rel="stylesheet" href="{{url('fonts/linearicons/style.css')}}">
+<link rel="stylesheet" href="{{url('vendor/date-picker/css/datepicker.min.css')}}">
+<link rel="stylesheet" href="{{url('/css/front/form/style.css')}}">
 <!--=============================Fin Fichiers css formulaire  ===============================================================-->
 
 </head>
@@ -18,7 +18,7 @@
     <div class="wrapper">
         <div class="inner">
             <div class="image-holder">
-                <img src="img/forms/form-wizard-01.jpg" alt="">
+                <img src="{{url('img/forms/form-wizard-01.jpg')}}" alt="">
                 <h3>Votre devis sur mésure </h3>
             </div>
             <div id="wizard">
@@ -425,12 +425,12 @@
 
 <!--===============================================================================================-->
 <!-- Denut injection script form -->
-<script src="js/forms/jquery-3.3.1.min.js"></script>
-<script src="js/forms/jquery.steps.js"></script>
+<script src="{{url('js/forms/jquery-3.3.1.min.js')}}"></script>
+<script src="{{url('js/forms/jquery.steps.js')}}"></script>
 
-<script src="vendor/date-picker/js/datepicker.js"></script>
-<script src="vendor/date-picker/js/datepicker.en.js"></script>
-<script src="js/forms/main.js"></script>
-<script src="js/forms/forms-demande-devis.js"></script>
-<script src="js/forms/forms-control-data.js"></script>
+<script src="{{url('vendor/date-picker/js/datepicker.js')}}"></script>
+<script src="{{url('vendor/date-picker/js/datepicker.en.js')}}"></script>
+<script src="{{url('js/forms/main.js')}}"></script>
+<script src="{{url('js/forms/forms-demande-devis.js')}}"></script>
+<script src="{{url('js/forms/forms-control-data.js')}}"></script>
 <!--===============================================================================================-->
