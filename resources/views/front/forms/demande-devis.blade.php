@@ -132,10 +132,10 @@
                            <span class="lnr lnr-chevron-down"></span>
                         </div>
                         <ul class="dropdown">
-                           <li rel="45x26x12">45 x 26 x 12 (Hauteur x Largeur x Soufflet en cm)</li>
-                           <li rel="50x30x14">50 x 30 x 14 (Hauteur x Largeur x Soufflet en cm)</li>
-                           <li rel="60x33x16 ">60 x 33 x 16 (Hauteur x Largeur x Soufflet en cm)</li>
-                           <li rel="64x44x18 ">64 x 44 x 18 (Hauteur x Largeur x Soufflet en cm)</li>
+                           <li rel="45x26x12" id="1">45 x 26 x 12 (Hauteur x Largeur x Soufflet en cm)</li>
+                           <li rel="50x30x14" id="2">50 x 30 x 14 (Hauteur x Largeur x Soufflet en cm)</li>
+                           <li rel="60x33x16 " id="3">60 x 33 x 16 (Hauteur x Largeur x Soufflet en cm)</li>
+                           <li rel="64x44x18 " id="4">64 x 44 x 18 (Hauteur x Largeur x Soufflet en cm)</li>
                         </ul>
                      </div>
                     <div class="select input-taille-anse" style="display: none;">
