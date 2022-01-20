@@ -104,10 +104,11 @@ Route::get(
     )->name('admin-stats-ecole')->middleware('adminauth');
 
 Route::get(
-    '/dd',
+    '/devis',
     [AdminController::class, 'demandeDevis']
     )->name('dd')
 ;
+
 
 //Route demande de devis
 Route::post(
