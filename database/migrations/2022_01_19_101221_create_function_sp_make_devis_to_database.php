@@ -14,10 +14,10 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
     public function up()
     {
         DB::unprepared("
-            DROP PROCEDURE IF EXISTS sp_make_devis;
+            DROP FUNCTION IF EXISTS sp_make_devis;
 
             DELIMITER $$
-            CREATE PROCEDURE sp_make_devis(demande_devis_id int)
+            CREATE FUNCTION sp_make_devis(sp_demande_devis_id int) RETURNS INT
             BEGIN
                 DECLARE sp_code_article varchar(225);
                 DECLARE sp_qte_article int ;
@@ -42,7 +42,7 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
                 #HxLxS
                 DECLARE article_taille_concat varchar(10);
                 #
-                DECLARE  cr cursor for SELECT code_article, qte_article from detail_demande_devis where id=demande_devis_id ;
+                DECLARE  cr cursor for SELECT code_article, qte_article from detail_demande_devis where demande_devis_id=sp_demande_devis_id ;
                 DECLARE continue handler for not found set fin_resultat=1;
                 
                 #Ouverture du cursor pour parcourir toute les lignes de la demande devis en cours de traitement
@@ -88,12 +88,12 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
                     #end 3 formatage
 
                     #Création du devis : on créé une ligne dans la table devis et on ajoute 
-                    IF (select count(numero) from devis where demande_devis_id=demande_devis_id) = 0 THEN
+                    IF (select count(numero) from devis where demande_devis_id=sp_demande_devis_id) = 0 THEN
                         #On créé la ligne le devis qui n'existe pas encore
-                        INSERT INTO devis (demande_devis_id) VALUES (demande_devis_id);
+                        INSERT INTO devis (demande_devis_id) VALUES (sp_demande_devis_id);
                         set numero_devis_courant = (select LAST_INSERT_ID());
                     ELSE 
-                        set numero_devis_courant = (select numero from devis where demande_devis_id=demande_devis_id limit 1);
+                        set numero_devis_courant = (select numero from devis where demande_devis_id=sp_demande_devis_id limit 1);
                     END IF;                    
                     #Insertion des lignes du detail devis
                     INSERT INTO detail_devis (numero_devis, designation, nb_sac_par_carton, nb_tot_carton, nb_tot_sac, pu_sac_prix_exw, Total)
@@ -101,6 +101,8 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
 
                 END LOOP readResult;
                 close cr ;
+                #On retourne le numero du devis nouvellement crée
+                RETURN numero_devis_courant;
             END$$ 
 
             DELIMITER ;

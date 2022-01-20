@@ -5,6 +5,13 @@ $(function() {
     var demandeDevisData = new FormData();
     var nbsacplusClick = 0;
 
+    var url_demande_devis = $("#wizard").attr('post_url');
+
+    //Configuration global de ajax
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('#token').val()}
+    });
+
     $("#wizard").steps({
         headerTag: "h4",
         bodyTag: "section",
@@ -213,9 +220,12 @@ $(function() {
             demandeDevisData.append("contacts", JSON.stringify(jsonCostumersDataContacts));
             demandeDevisData.append("articles", JSON.stringify(jsonCostumersData));
             
-            console.log(demandeDevisData);
             //Près pour l'appel ajax vers l'api php
             //En attente du backend
+ 
+
+            //On lance la demande devis 
+            executeDemandeDevis(demandeDevisData);
             
             $('.finishing').css('display', 'none');
             $('.demande-ok').css('display', 'block');
@@ -286,6 +296,31 @@ $(function() {
         }
     }
 
+
+    //Lancer la demande devis : insertion et calcule du devis
+    function executeDemandeDevis(odata)
+    {
+        $.ajax({
+            enctype: 'multipart/form-data',
+            url : url_demande_devis,    
+            processData: false,
+            contentType: false,
+            cache: false,
+            method : "POST",
+            data: odata,
+            beforeSend : function(){
+                //
+            }
+        }).done( function(res){
+            //
+        }).fail(function(res){
+            //Erreur d'appel 
+
+        });
+    }
+
+
+
     // var dp1 = $('#dp1').datepicker().data('datepicker');
     // dp1.selectDate(new Date());
     // var dp2 = $('#dp2').datepicker().data('datepicker');
@@ -337,6 +372,7 @@ $(function() {
      function saveDataClient(){
         // jsonCostumersData
         var typeSac,
+            typeSacID,
             couleursac,
             qtesac,
             taillesac,
@@ -353,6 +389,7 @@ $(function() {
         $('.ckbx-type-sac-selection input').each(function(){
             if(this.checked){
                 typeSac = this.value;
+                typeSacID = $(this).attr("type_article_id");
             }
         })
 
@@ -389,10 +426,12 @@ $(function() {
         && $(".type-impression-c input:checked").val() === "imp-perso"
         && $(".btn-import-logo").text() == "Importer votre logo ici" ){
             typeImpression = "personaliser";
-            nbCouleurImpression = $('.select-nb-couleur-perso').text();
+            const getNbCol = $('.select-nb-couleur-perso').text().split('-');
+             nbCouleurImpression = getNbCol[0];
         }
         else {
             typeImpression = "neutre";
+            nbCouleurImpression = 0;
         }
 
         if(jsonCostumersData.length > 0){
@@ -401,9 +440,11 @@ $(function() {
                 {  
                     num : i+1,
                     typeSac: typeSac ,
+                    typeSacID : typeSacID,
                     couleurSac: couleursac,
                     qteSac: qtesac,
                     tailleSac: taillesac,
+                    nbCouleurImpression : nbCouleurImpression,
                     tailleanseSac: tailleanse,
                     grammageSac: grammagesac
                 }
@@ -413,16 +454,18 @@ $(function() {
                 {  
                     num : 1,
                     typeSac: typeSac ,
+                    typeSacID : typeSacID,
                     couleurSac: couleursac,
                     qteSac: qtesac,
                     tailleSac: taillesac,
+                    nbCouleurImpression : nbCouleurImpression,
                     tailleanseSac: tailleanse,
                     grammageSac: grammagesac
                 }
             ]);
         }
 
-        console.log(jsonCostumersData);
+        // console.log(jsonCostumersData);
 
      }
 
@@ -505,7 +548,7 @@ $(function() {
             adrLivContact: adrLivContact,
             codePostaclContac: codePostaclContact
         });
-        console.log(jsonCostumersDataContacts);
+        // console.log(jsonCostumersDataContacts);
 
      }
 

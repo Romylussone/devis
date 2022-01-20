@@ -11,6 +11,7 @@ use App\Http\Controllers\VisiteController;
 use App\Http\Middleware\AdminAuthenticate;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DevisController;
+use App\Http\Controllers\DemandeDevisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,6 +108,25 @@ Route::get(
     [AdminController::class, 'demandeDevis']
     )->name('dd')
 ;
+
+//Route demande de devis
+Route::post(
+    '/demande/devis/',
+    [DemandeDevisController::class, 'demandeDevis']
+)->name('demande.devis');
+
+
+Route::get(
+    '/testenvoiedeevis',
+    [DemandeDevisController::class, 'testenvoieEmail']
+);
+
+
+
+
+
+
+
 
 
 //admin /POST ecole : Pour appel ajax

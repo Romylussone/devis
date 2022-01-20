@@ -21,7 +21,7 @@
                 <img src="{{url('img/forms/form-wizard-01.jpg')}}" alt="">
                 <h3>Votre devis sur mésure </h3>
             </div>
-            <div id="wizard">
+            <div id="wizard" post_url="{{route('demande.devis')}}">
                 <h4>Votre type de Sac</h4>
                 <section>
                 <div class="form-row">
@@ -37,27 +37,27 @@
                     </div> -->
                     <div class="checkbox-circle ckbx-type-sac-selection">
                         <label>
-                            <input type="radio" name="typesac" value="bretelle" checked="">Bretelle
+                            <input type="radio" name="typesac" value="bretelle" type_article_id="1" checked="">Bretelle
                             <span class="checkmark"></span>
                         </label>
                         <label>
-                            <input type="radio" name="typesac" value="anse"> Anses
+                            <input type="radio" name="typesac" value="anse" type_article_id="3" >Anses
                             <span class="checkmark"></span>
                         </label>
                         <label>
-                            <input type="radio" name="typesac" value="poignee" >Poignées
+                            <input type="radio" name="typesac" value="poignee" type_article_id="2">Poignées
                             <span class="checkmark"></span>
                         </label>
                         <label>
-                            <input type="radio" name="typesac" value="anse-lg" >Anses Longues
+                            <input type="radio" name="typesac" value="anse-lg" type_article_id="4" >Anses Longues
                             <span class="checkmark"></span>
                         </label>
                         <label>
-                            <input type="radio" name="typesac" value="box" >Box
+                            <input type="radio" name="typesac" value="box" type_article_id="5">Box
                             <span class="checkmark"></span>
                         </label>
                         <label>
-                            <input type="radio" name="typesac" value="lamine" >Laminé
+                            <input type="radio" name="typesac" value="lamine" type_article_id="6">Laminé
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -420,6 +420,7 @@
             </div>
         </div>
     </div>
+    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <!-- Fin Formulaire ici -->
 </body>
 
