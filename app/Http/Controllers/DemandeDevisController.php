@@ -191,7 +191,6 @@ class DemandeDevisController extends Controller
     private function sendDevisByMail($numero_devis)
     {
         
-
         #1 : On récupère tout le details du devis 
         $devis = DetailDevis::where('numero_devis', 11)->get()->toArray();
 
@@ -235,12 +234,25 @@ class DemandeDevisController extends Controller
              inner join contacts c on c.entreprie_id=dd.entreprise_id
              inner join entreprises e on e.id=dd.entreprise_id
              where d.numero=? limit 1
-         ', array(11));
+         ', array(17));
+
+         #3 :On envoie le mail
+        $devis_mail_content = new sendDevis($devis, 17, $tabemail[0]->nom);
+        $namepdfdevis = sprintf("%'.08d", 17);
 
         //  dd($tabemail);
         return view('email.devis')->with('devis', $devis)
-        ->with('numero', 11)
-        ->with('entreprise', $tabemail[0]->nom);
+        ->with('numero', 17)
+        ->with('entreprise', $tabemail[0]->nom)->render();
+
+        // $devis_pdf = \PDF::loadHTML($html_devis)->setPaper('a4', 'landscape')->setWarnings(false)->save(public_path('storage/devis/'.$namepdfdevis));
+        // dd();
+        // dd($devis_pdf->output());
+         //Envoie du mail avec le visiteur en copie caché
+        //  \Illuminate\Support\Facades\Mail::to($tabemail[0]->email)
+        //  ->cc('support@gssoftai.com')
+        //  ->send($devis_mail_content);
+        //  ->attach($devis_pdf->output(), "devis.pdf");
     }
 
 }
