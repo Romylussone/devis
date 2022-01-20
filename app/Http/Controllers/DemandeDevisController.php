@@ -241,7 +241,7 @@ class DemandeDevisController extends Controller
         $namepdfdevis = sprintf("%'.08d", 17);
 
         //  dd($tabemail);
-        return view('email.devis')->with('devis', $devis)
+        $html_devis = view('email.devis')->with('devis', $devis)
         ->with('numero', 17)
         ->with('entreprise', $tabemail[0]->nom)->render();
 
@@ -249,9 +249,9 @@ class DemandeDevisController extends Controller
         // dd();
         // dd($devis_pdf->output());
          //Envoie du mail avec le visiteur en copie caché
-        //  \Illuminate\Support\Facades\Mail::to($tabemail[0]->email)
-        //  ->cc('support@gssoftai.com')
-        //  ->send($devis_mail_content);
+         \Illuminate\Support\Facades\Mail::to($tabemail[0]->email)
+         ->cc('support@gssoftai.com')
+         ->send($devis_mail_content);
         //  ->attach($devis_pdf->output(), "devis.pdf");
     }
 
