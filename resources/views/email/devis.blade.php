@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>S&S PACKAGING - Devis sur mesure </title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{url('/vendor/mdi/css/materialdesignicons.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{url('/vendor/mdi/css/materialdesignicons.min.css')}}"> -->
     <link rel="stylesheet" href="{{url('/css/admin/style.css')}}">
     <!-- End layout styles -->
   </head>
@@ -100,8 +100,7 @@
                 </div>
             </div>
         </div>
-            
-    </div>   
+      </div>
     </span>
   </body>
 </html>

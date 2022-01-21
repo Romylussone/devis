@@ -41,6 +41,8 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
                 DECLARE grammage_id int;
                 #HxLxS
                 DECLARE article_taille_concat varchar(10);
+                #icon 
+                DECLARE article_img_icon varchar(255);
                 #
                 DECLARE  cr cursor for SELECT code_article, qte_article from detail_demande_devis where demande_devis_id=sp_demande_devis_id ;
                 DECLARE continue handler for not found set fin_resultat=1;
@@ -65,6 +67,7 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
                     set nb_color_article = (select nb_couleur from type_impression_articles where id=(select type_impresion_article_id from articles where code=sp_code_article limit 1));
                     #
                     set taille_id = (select taille_article_id from articles where code=sp_code_article limit 1);
+                    set article_img_icon = (select lienCouleur from articles where code=sp_code_article limit 1);
                     set grammage_id = (select grammage_article_id from articles where code=sp_code_article limit 1);                    
                     #
                     set prix_exw = (select sp_fmu_prix_par_gramme(nb_color_article, sp_type_article_id) * sp_fmu_poids_sac_en_gramme(taille_id, grammage_id));
@@ -96,8 +99,8 @@ class CreateFunctionSpMakeDevisToDatabase extends Migration
                         set numero_devis_courant = (select numero from devis where demande_devis_id=sp_demande_devis_id limit 1);
                     END IF;                    
                     #Insertion des lignes du detail devis
-                    INSERT INTO detail_devis (numero_devis, designation, nb_sac_par_carton, nb_tot_carton, nb_tot_sac, pu_sac_prix_exw, Total)
-                    VALUES (numero_devis_courant, designation_art, nb_sac_par_cart, nb_cart, sp_qte_article, prix_exw, prix_exw * sp_qte_article);
+                    INSERT INTO detail_devis (numero_devis, icon, designation, nb_sac_par_carton, nb_tot_carton, nb_tot_sac, pu_sac_prix_exw, Total)
+                    VALUES (numero_devis_courant, article_img_icon, designation_art, nb_sac_par_cart, nb_cart, sp_qte_article, prix_exw, prix_exw * sp_qte_article);
 
                 END LOOP readResult;
                 close cr ;

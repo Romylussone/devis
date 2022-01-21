@@ -380,10 +380,11 @@ $(function() {
             grammagesac,
             typeImpression,
             nbCouleurImpression="",
+            lienTypeSac="",
             withLogo;
 
         /*
-        ** 01 : Type de sac
+        ** 01 : Type de sac 
         **Récupération du type de sac
         */
         $('.ckbx-type-sac-selection input').each(function(){
@@ -397,12 +398,14 @@ $(function() {
         ** 02 : Caractéristique du sac : Couleur, taille, type de grammage et qte désiré
         **Récupération du type de sac
         */
-       //**Couleur sac
+       //**Couleur sac et lien image
         $('.btn-color-picker button').each(function(){
             if($(this).hasClass('color-chosen')){
                 couleursac = $(this).attr('id');
             }
         })
+
+        lienTypeSac = $('.img-container-2 img').attr('src');
 
         //** Taille sac
         taillesac = $("#taile-sac").text();
@@ -446,7 +449,8 @@ $(function() {
                     tailleSac: taillesac,
                     nbCouleurImpression : nbCouleurImpression,
                     tailleanseSac: tailleanse,
-                    grammageSac: grammagesac
+                    grammageSac: grammagesac,
+                    lienTypeSac: lienTypeSac
                 }
             ]);
         }else {
@@ -460,7 +464,8 @@ $(function() {
                     tailleSac: taillesac,
                     nbCouleurImpression : nbCouleurImpression,
                     tailleanseSac: tailleanse,
-                    grammageSac: grammagesac
+                    grammageSac: grammagesac,
+                    lienTypeSac: lienTypeSac
                 }
             ]);
         }

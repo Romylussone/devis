@@ -50,7 +50,7 @@ class DemandeDevisController extends Controller
         $articles_demander = json_decode( $request->input('articles'));
         // dump($contact_demandeur);
         //Après la reception des données du demandeur de devis : on enregistres les données et on créé le devis
-
+        
         #Etape 01 : 
         //Enregistrement info Entreprise : 
         //Si l'entreprise existe
@@ -149,6 +149,7 @@ class DemandeDevisController extends Controller
             $dataInsert[$k]["taille_article_id"] = $tid->id;
             $dataInsert[$k]["grammage_article_id"] = $gra_id->id;
             $dataInsert[$k]["type_impresion_article_id"] = $nbcolti_id->id;
+            $dataInsert[$k]["lienCouleur"] = $v[0]->lienTypeSac;
             // $dataInsert[$k]["created_at"] = "'".now()."'";
             // $dataInsert[$k]["updated_at"] = "'".now()."'";
 
@@ -192,26 +193,27 @@ class DemandeDevisController extends Controller
     {
         
         #1 : On récupère tout le details du devis 
-        $devis = DetailDevis::where('numero_devis', 11)->get()->toArray();
+        $devis = DetailDevis::where('numero_devis', $numero_devis)->get()->toArray();
 
         #2 : On récupère l'adresse email du demandeur
-        $tabemail = DB::select('
-            select c.email, e.nom
+        $tabemail = DB::select("
+            select c.email, concat(c.prenoms, ' ',c.nom) as nomcontact, e.nom
             from devis d
             inner join demande_devis dd on dd.id=d.demande_devis_id
             inner join contacts c on c.entreprie_id=dd.entreprise_id
             inner join entreprises e on e.id=dd.entreprise_id
             where d.numero=? limit 1
-        ', array($numero_devis));
+        ", array($numero_devis));
 
         #3 :On envoie le mail
-        $devis_mail_content = new sendDevis($devis, $numero_devis, $tabemail[0]->nom);
+        $devis_mail_content = new sendDevis($devis, $numero_devis, $tabemail[0]->nom, $tabemail[0]->nomcontact);
 
         //Envoie du mail avec le visiteur en copie caché
         \Illuminate\Support\Facades\Mail::to($tabemail[0]->email)
             ->cc('support@gssoftai.com')
             ->send($devis_mail_content);
 
+        #4 on retourne le message
         return json_encode(array('type' =>'ok', 'message' =>'Devis envoyé avec succès'));
     }
 
@@ -224,35 +226,51 @@ class DemandeDevisController extends Controller
     public function testenvoieEmail()
     {
          #1 : On récupère tout le details du devis 
-         $devis = DetailDevis::where('numero_devis', 11)->get()->toArray();
+         $devis = DetailDevis::where('numero_devis', 22)->get()->toArray();
 
+        
          #2 : On récupère l'adresse email du demandeur
-         $tabemail = DB::select('
-             select c.email, e.nom
-             from devis d
-             inner join demande_devis dd on dd.id=d.demande_devis_id
-             inner join contacts c on c.entreprie_id=dd.entreprise_id
-             inner join entreprises e on e.id=dd.entreprise_id
-             where d.numero=? limit 1
-         ', array(17));
+         $tabemail = DB::select("
+                select c.email, concat(c.prenoms, ' ',c.nom) as nomcontact, e.nom
+                from devis d
+                inner join demande_devis dd on dd.id=d.demande_devis_id
+                inner join contacts c on c.entreprie_id=dd.entreprise_id
+                inner join entreprises e on e.id=dd.entreprise_id
+                where d.numero=? limit 1
+         ", array(22));
 
+        
          #3 :On envoie le mail
-        $devis_mail_content = new sendDevis($devis, 17, $tabemail[0]->nom);
+        $devis_mail_content = new sendDevis($devis, 22, $tabemail[0]->nom, $tabemail[0]->nomcontact );
         $namepdfdevis = sprintf("%'.08d", 17);
+        
+        // return view('email.devis2')
+        // ->with('devis', $devis)
+        // ->with('numero', 22)
+        // ->with('sommeTotal', 0)
+        // ->with('nomcontact',  $tabemail[0]->nomcontact)
+        // ->with('entreprise', $tabemail[0]->nom);
+        // die();
 
-        //  dd($tabemail);
-        $html_devis = view('email.devis')->with('devis', $devis)
-        ->with('numero', 17)
-        ->with('entreprise', $tabemail[0]->nom)->render();
-
-        // $devis_pdf = \PDF::loadHTML($html_devis)->setPaper('a4', 'landscape')->setWarnings(false)->save(public_path('storage/devis/'.$namepdfdevis));
-        // dd();
-        // dd($devis_pdf->output());
+        // dd($devis_mail_content);
          //Envoie du mail avec le visiteur en copie caché
          \Illuminate\Support\Facades\Mail::to($tabemail[0]->email)
          ->cc('support@gssoftai.com')
          ->send($devis_mail_content);
         //  ->attach($devis_pdf->output(), "devis.pdf");
+
+
+        
+        #Brouillon ...
+        // $html_devis = view('email.devis')->with('devis', $devis)
+        // ->with('numero', 17)
+        // ->with('entreprise', $tabemail[0]->nom)->render();
+        
+        // $devis_pdf = \PDF::loadHTML($html_devis)->setPaper('a4', 'landscape')->setWarnings(false)->save(public_path('storage/test.pdf'));
+        // set_time_limit(300);
+        // $devis_pdf = \PDF::loadView('email.devis', array('numero' => 17, 'entreprise' =>$tabemail[0]->nom, 'devis'=>$devis))->setPaper('a4', 'landscape')->setWarnings(false)->save(public_path('storage/test.pdf'));        
+        // dd($devis_pdf);
+        // dd($devis_pdf->output());
     }
 
 }
