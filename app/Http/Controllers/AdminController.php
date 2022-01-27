@@ -19,7 +19,7 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        return view('/adminvv/home');
+        return view('admin.home');
     }
     
     /**
@@ -29,7 +29,7 @@ class AdminController extends Controller
      */
     public function login()
     {
-        return view('/adminvv/login');
+        return view('admin.login');
     }
         
     /**
@@ -91,76 +91,9 @@ class AdminController extends Controller
      */
     public function params()
     {
-        return view('/adminvv/admin-params');
+        return view('admin.admin-params');
     }
     
-    /**
-     * ajouterEcole
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    public function ajouterEcole(Request $request)
-    {   
-        //On spécifie les champs obligatoire
-        request()->validate([
-            'imghomeEcole'  => 'required|mimes:png,jpeg,jpg|max:115000',
-            'nom'  => 'required',
-            'nomComplet'  => 'required',
-            'emailEcole'  => 'required',
-            'liensiteweb'  => 'required',
-            'lienvv'  => 'required',
-            'fbpageid'  => 'required',
-            'lienVideo'  => 'required',
-        ]);
-
-        //Nouvelle instance de ecole
-        $ecole = new Ecole;
-        $inputemailEcole = $request->input('emailEcole') ;
-        $cmail = $ecole->where('email_etabli', $inputemailEcole)->first();
-
-        //On vérifie si l'ecole existe dejà
-        if(isset($cmail))
-        {
-            //Cette ecole existe dejà 
-            $response = ["type" => "ecole", "message" => "Cette ecole existe déjà! "];
-            return response($response, 422);
-        }
-        else
-        {
-            //Ajouter l'ecole
-            // dd($request->file('imghomeEcole'));
-            $fname = strtolower($request->input('nom')."_bg").".".$request->file('imghomeEcole')->extension();
-            $pathF = $this->saveFile($request->file('imghomeEcole'), $fname);
-
-            // 'nomEtabli', 'sitewebEtabli', 'lienVisiteEtabli', 'lienVideo','fb_page_id', 'email_etabli',cheminImghome
-            $ecole->nomEtabli =  strtoupper($request->input('nom'));
-            $ecole->nomCompletEtabli =  ucfirst($request->input('nomComplet'));
-            $ecole->sitewebEtabli =  $request->input('liensiteweb');
-            $ecole->lienVisiteEtabli =  $request->input('lienvv');
-            $ecole->lienVideo =  $request->input('lienVideo');
-            $ecole->fb_page_id =  $request->input('fbpageid');
-            $ecole->email_etabli =  $request->input('emailEcole');
-            $ecole->cheminImghome =  $pathF;
-
-            //On ajoute la nouvelle ecole
-            $ecole->save();
-            $response = ["type" =>"ok", "message" =>"Ecole ajoutée avec succès"];
-            return response($response, 200);
-
-        }
-    }
-    
-    /**
-     * gererEcole
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    public function gererEcole(Request $request)
-    {
-        
-    }
 
     
     /**
@@ -172,24 +105,17 @@ class AdminController extends Controller
      */
     private function saveFile($f, $fname)
     {
-        $fname = str_replace(' ', '_', trim($fname)) ;
-
-        $path = $f->storeAs('ecole', $fname);
-        if(isset($path))
-        {
-            //On déplace l'img vers le dossier des img de l'ecole
-            $tf = storage_path('app/ecole/'.$fname);
-            $newf = public_path('/img/ecole/'.$fname);
-
-            rename($tf, $newf);
-
-            $path = '/img/ecole/'.$fname ;
-        }
-
-        return $path ;
-
+        //
     }
 
+    
+    
+    /**
+     * nouvelAdmin
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function nouvelAdmin(Request $request)
     {
         //Si le login existe
@@ -260,100 +186,6 @@ class AdminController extends Controller
     }
 
     
-    /**
-     * updateEcole : Mise à jout des infos d'une ecole
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    public function updateEcole(Request $request)
-    {
-        
-        //Nouvelle instance de ecole
-        $ecole = new Ecole;
-        $ecoleID = $request->input('ecoleID') ;
-        $imgMaj = $request->input('imgMaj') ;
-
-        $cid = $ecole->where('etablissementID', $ecoleID)->first();
-
-        //On vérifie si l'ecole existe dejà
-        if(isset($cid))
-        {
-            //Mise à jour de l'ecole
-
-            //On vérifie si l'img à été changée ou pas
-            if($imgMaj == "true")
-            {
-                $fname = strtolower($request->input('nom')."_bg").".".$request->file('imghomeEcole')->extension();
-                $pathF = $this->saveFile($request->file('imghomeEcole'), $fname);
-                // $ecole->cheminImghome =  $pathF;
-                $valuesUpdate = [
-                    'nomEtabli' =>  strtoupper($request->input('nom')),
-                    'nomCompletEtabli' =>  ucfirst($request->input('nomComplet')),
-                    'sitewebEtabli' =>  $request->input('liensiteweb'),
-                    'lienVisiteEtabli' =>  $request->input('lienvv'),
-                    'lienVideo' =>  $request->input('lienVideo'),
-                    'fb_page_id' =>  $request->input('fbpageid'),
-                    'email_etabli' =>  $request->input('emailEcole'),
-                    'cheminImghome' => $pathF
-                ];
-            }
-            else {
-                $valuesUpdate = [
-                    'nomEtabli' =>  strtoupper($request->input('nom')),
-                    'nomCompletEtabli' =>  ucfirst($request->input('nomComplet')),
-                    'sitewebEtabli' =>  $request->input('liensiteweb'),
-                    'lienVisiteEtabli' =>  $request->input('lienvv'),
-                    'lienVideo' =>  $request->input('lienVideo'),
-                    'fb_page_id' =>  $request->input('fbpageid'),
-                    'email_etabli' =>  $request->input('emailEcole')
-                ];
-            }
-            
-
-            //On lance la maj de l'ecole
-            $ecole->where('etablissementID', $ecoleID)->update($valuesUpdate);
-
-            $response = ["type" =>"ok", "message" =>"Ecole mise à jour avec succès"];
-
-            return response($response, 200);            
-            
-        }
-        else
-        {
-            $response = ["type" => "ecole", "message" => "Cette ecole n'existe pas! "];
-            return response($response, 422);
-        }
-    }
-    
-    
-    /**
-     * deleteEcole :  Supprimer une ecole
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    public function deleteEcole(Request $request)
-    {
-        //Nouvelle instance de ecole
-        $ecole = new Ecole;
-        $id = $request->input('id') ;
-        $ecoleTodel = $ecole->where('etablissementID', $id)->first();
-
-        if(isset($ecoleTodel)){
-            $ecoleTodel->delete();
-
-            $response = ["type" => "ecole", "message" => "Ecole supprimée avec succès! "];
-            return response($response, 200);
-        }
-        else
-        {
-            $response = ["type" => "ecole", "message" => "Ecole non trouvée ! "];
-            return response($response, 422);
-        }
-
-    }
-    
 
      /**
      * validateLogin
@@ -369,18 +201,6 @@ class AdminController extends Controller
         ]);
     }
     
-    /**
-     * getStatEcol : Pour charger les stas de toutes les ecoles
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    public function getStatEcol(Request $request)
-    {
-        $nb_vvParEcol = DB::select('');
-    }
-
-
 
     /**
      * Get the password for the user.
@@ -401,7 +221,7 @@ class AdminController extends Controller
      */
     public function demandeDevis(Request $request)
     {
-        return view('/front/forms/demande-devis');
+        return view('front.forms.demande-devis');
     }
 
 }

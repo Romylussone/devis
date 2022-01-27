@@ -42,27 +42,27 @@ class DevisController extends Controller
         {
             case 'all':
                 //
-                return view('/adminvv/devisall');
+                return view('/admin/devisall');
                 break;
             case 'hebdo':
                 //
-                return view('/adminvv/devishebdo');
+                return view('/admin/devishebdo');
                 break;
             case 'mensuel':
                 //
-                return view('/adminvv/devismensuel');
+                return view('/admin/devismensuel');
                 break;
             case 'annuel':
                 //
-                return view('/adminvv/devisannuel');
+                return view('/admin/devisannuel');
                 break;
             case 'template':
                 //
-                return view('/adminvv/devistemplate');
+                return view('/admin/devistemplate');
                 break;
             default:
                 //
-                return view('/adminvv/home');
+                return view('/admin/home');
                 break;
         }
     }

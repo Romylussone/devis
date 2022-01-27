@@ -41,31 +41,31 @@ class ArticleController extends Controller
         {
             case 'bret':
                 //
-                return view('/adminvv/article-bret');
+                return view('admin.article-bret');
                 break;
             case 'poig':
                 //
-                return view('/adminvv/article-poig');
+                return view('admin.article-poig');
                 break;
             case 'anse':
                 //
-                return view('/adminvv/article-anse');
+                return view('admin.article-anse');
                 break;
             case 'anselg':
                 //
-                return view('/adminvv/article-anselg');
+                return view('admin.article-anselg');
                 break;
             case 'box':
                 //
-                return view('/adminvv/article-box');
+                return view('admin.article-box');
                 break;
             case 'lami':
                 //
-                return view('/adminvv/article-lami');
+                return view('admin.article-lami');
                 break;
             default:
                 //
-                return view('/adminvv/home');
+                return view('admin.home');
                 break;
         }
     }

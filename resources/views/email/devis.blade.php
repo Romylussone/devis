@@ -3,26 +3,22 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport">
     <title>S&S PACKAGING - Devis sur mesure </title>
     <!-- plugins:css -->
     <!-- <link rel="stylesheet" href="{{url('/vendor/mdi/css/materialdesignicons.min.css')}}"> -->
     <link rel="stylesheet" href="{{url('/css/admin/style.css')}}">
     <!-- End layout styles -->
   </head>
-  <body>
+  <body >
     <div class="container-scroller">
         <div class="">
           <div class="content-wrapper">
-            <div class="page-header">
-                <h3 class="page-title">
-                    <span class="page-title-icon bg-gradient-dark text-white mr-2">
-                    <i class="mdi mdi-receipt"></i>
-                    </span> Devis sur mesure
-                </h3>
-            </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-2">
+                    .
+                </div>
+                <div class="col-lg-8" id="devisToPdf">
                     <div class="card px-2">
                     <div class="card-body">
                         <div class="container-fluid">
@@ -93,7 +89,7 @@
                         </div>
                         <div class="container-fluid w-100">
                         <!-- <a href="#" class="btn btn-primary float-right mt-4 ml-2"><i class="mdi mdi-printer mr-1"></i>J'en profite</a> -->
-                        <a href="#" class="btn btn-success float-right mt-4"><i class="mdi mdi-telegram mr-1"></i>Accepter devis</a>
+                        <a href="#" class="btn btn-success float-right mt-4 btnDevisToPdf" ><i class="mdi mdi-telegram mr-1"></i>Accepter devis</a>
                         </div>
                     </div>
                     </div>
@@ -102,5 +98,9 @@
         </div>
       </div>
     </span>
+    <script src="/vendor/html2canvas/html2canvas.min.js"></script>
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/vendor/jspdf1.5.3/jspdf.debug.js"></script>
+    <script src="/js/admin/devis-jsPdf.js"></script>
   </body>
 </html>
