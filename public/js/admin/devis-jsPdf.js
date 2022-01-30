@@ -25,3 +25,22 @@
         });
     })
 })(jQuery);
+
+window.addEventListener("load", function(){
+    // window.scrollTo(0, 0);
+
+    // doc = document.getElementById('devisToPdf');
+    //     html2canvas(doc).then(function (canvas) {
+    //     var img = canvas.toDataURL("image/png");
+    //     var doc = new jsPDF({
+    //         orientation: 'landscape',
+    //     });
+    //     const imgProps= doc.getImageProperties(img);
+    //     const pdfWidth = doc.internal.pageSize.getWidth();
+    //     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    //     doc.addImage(img, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined,'FAST');
+
+    //     // doc.addImage(img, 'JPEG', 10, 10);
+    //     doc.save('test.pdf');
+    // });
+});

@@ -148,7 +148,7 @@
                                                                               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                                                  <tr>
                                                                                     <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
-                                                                                       <h3 style="padding:0px;margin:0px">S&S PACKAGING</h3>
+                                                                                       <h3 style="padding:0px;margin:0px; color:#c74886;">S&S PACKAGING</h3>
                                                                                        <!-- <img align="center" border="0" src="https://cdn.templates.unlayer.com/assets/1619850519618-g.png" alt="Logo" title="Logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 33%;max-width: 174.9px;" width="174.9" class="v-src-width v-src-max-width"/> -->
                                                                                     </td>
                                                                                  </tr>
@@ -175,10 +175,10 @@
                                     </div>
                                  </div>
                               </div>
-                              <!-- Find Div du nom de l'entreprise -->
+                              <!-- Fin Div du nom de l'entreprise -->
                               <!-- Div du logo  -->
                               <div class="u-row-container v-row-background-image--outer" style="padding: 0px;background-color: transparent">
-                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #1f2060;">
+                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #6dbaa9;">
                                     <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
                                        <!--[if (mso)|(IE)]>
                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -202,7 +202,7 @@
                                                                               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                                                  <tr>
                                                                                     <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
-                                                                                       <img align="center" border="0" src="{{url('/storage/img/forms/email-barner.jpg')}}" alt="Invoice Banner" title="Invoice Banner" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 52%;max-width: 275.6px;" width="275.6" class="v-src-width v-src-max-width"/>
+                                                                                       <img align="center" border="0" src="{{url('/storage/img/logo1.JPG')}}" alt="S&S PACKAGING" title="S&S PACKAGING Logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 52%;max-width: 275.6px;" width="275.6" class="v-src-width v-src-max-width"/>
                                                                                     </td>
                                                                                  </tr>
                                                                               </table>
@@ -253,7 +253,7 @@
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 10px 0px 15px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <h1 class="v-text-align" style="margin: 0px; color: #272e79; line-height: 140%; text-align: left; word-wrap: break-word; font-weight: normal; font-family: 'Raleway',sans-serif; font-size: 22px;">
-                                                                                 Cher {{$nomcontact}}, Merci de nous avoir contacté
+                                                                                 Cher {{$nomcontact}},
                                                                               </h1>
                                                                            </td>
                                                                         </tr>
@@ -302,7 +302,7 @@
                               <!-- Fin Div du mot au client -->
                               <!-- Div entête du tableau de devis -->
                               <div class="u-row-container v-row-background-image--outer" style="padding: 0px;background-color: transparent">
-                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #bdbfff;">
+                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #c74886;">
                                     <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
                                        <!--[if (mso)|(IE)]>
                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -324,34 +324,7 @@
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <div class="v-text-align" style="color: #2c3581; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 140%;"><strong>Article</strong></p>
-                                                                              </div>
-                                                                           </td>
-                                                                        </tr>
-                                                                     </tbody>
-                                                                  </table>
-                                                                  <!--[if (!mso)&(!IE)]><!-->
-                                                               </div>
-                                                               <!--<![endif]-->
-                                                            </div>
-                                                         </div>
-                                                         <!--[if (mso)|(IE)]>
-                                                      </td>
-                                                      <![endif]-->
-                                                      <!--[if (mso)|(IE)]>
-                                                      <td align="center" width="138" style="width: 138px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top">
-                                                         <![endif]-->
-                                                         <div class="u-col u-col-25" style="max-width: 320px;min-width: 138px;display: table-cell;vertical-align: top;">
-                                                            <div style="width: 100% !important;">
-                                                               <!--[if (!mso)&(!IE)]><!-->
-                                                               <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
-                                                                  <!--<![endif]-->
-                                                                  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                                                     <tbody>
-                                                                        <tr>
-                                                                           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
-                                                                              <div class="v-text-align" style="color: #2c3581; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 140%;"><strong>Description<br /></strong></p>
+                                                                                 <p style="font-size: 14px; line-height: 140%;"><strong>Designation</strong></p>
                                                                               </div>
                                                                            </td>
                                                                         </tr>
@@ -379,6 +352,33 @@
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <div class="v-text-align" style="color: #2c3581; line-height: 140%; text-align: center; word-wrap: break-word;">
                                                                                  <p style="font-size: 14px; line-height: 140%;"><strong>Qte<br /></strong></p>
+                                                                              </div>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </tbody>
+                                                                  </table>
+                                                                  <!--[if (!mso)&(!IE)]><!-->
+                                                               </div>
+                                                               <!--<![endif]-->
+                                                            </div>
+                                                         </div>
+                                                         <!--[if (mso)|(IE)]>
+                                                      </td>
+                                                      <![endif]-->
+                                                      <!--[if (mso)|(IE)]>
+                                                      <td align="center" width="138" style="width: 138px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top">
+                                                         <![endif]-->
+                                                         <div class="u-col u-col-25" style="max-width: 320px;min-width: 138px;display: table-cell;vertical-align: top;">
+                                                            <div style="width: 100% !important;">
+                                                               <!--[if (!mso)&(!IE)]><!-->
+                                                               <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                                                                  <!--<![endif]-->
+                                                                  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                                     <tbody>
+                                                                        <tr>
+                                                                           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
+                                                                              <div class="v-text-align" style="color: #2c3581; line-height: 140%; text-align: center; word-wrap: break-word;">
+                                                                                 <p style="font-size: 14px; line-height: 140%;"><strong>Prix unitaire DAP<br /></strong></p>
                                                                               </div>
                                                                            </td>
                                                                         </tr>
@@ -437,11 +437,10 @@
                               @foreach ($devis as $k => $dev)
                                  @php
                                     if ($k % 2 == 0) $color = "#eae6ea"; else $color = "#f8f7f8";
-                                    $montantPT = number_format($dev["Total"], 2, ',', ' ');
-                                    $img_url=$dev["icon"];
+                                    $montantPT = number_format('000000000', 2, ',', ' ');
                                  @endphp
                               <div class="u-row-container v-row-background-image--outer" style="padding: 0px;background-color: transparent">
-                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: {$color};">
+                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: {{$color}};">
                                     <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
                                        <!--[if (mso)|(IE)]>
                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -465,9 +464,9 @@
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                                                  <tr>
-                                                                                    <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
-                                                                                       <img align="center" border="0" src="{{$img_url}}" alt="Image/icon" title="Article Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 67%;max-width: 79.06px;" width="79.06" class="v-src-width v-src-max-width"/>
-                                                                                    </td>
+                                                                                    <div class="v-text-align" style="color: #636262; line-height: 140%; text-align: center; word-wrap: break-word;">
+                                                                                       <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 14px; font-weight:bold;line-height: 16.8px;">{{substr($dev["designation"], 0, 45)}}</span></p>
+                                                                                    </div>
                                                                                  </tr>
                                                                               </table>
                                                                            </td>
@@ -513,9 +512,14 @@
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <div class="v-text-align" style="color: #636262; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 14px; font-weight:bold;line-height: 16.8px;">{{substr($dev["designation"], 0, 45)}}</span></p>
+                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 18px; line-height: 25.2px;font-family: 'Open Sans', sans-serif;">{{$dev["nb_tot_sac"]}}</span></p>
                                                                               </div>
                                                                            </td>
+                                                                           <!-- <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Raleway',sans-serif;" align="left">
+                                                                              <div class="v-text-align" style="color: #636262; line-height: 140%; text-align: center; word-wrap: break-word;">
+                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 14px; font-weight:bold;line-height: 16.8px;">{{$dev["nb_tot_sac"]}}</span></p>
+                                                                              </div>
+                                                                           </td> -->
                                                                         </tr>
                                                                      </tbody>
                                                                   </table>
@@ -558,18 +562,7 @@
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <div class="v-text-align" style="color: #636262; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 18px; line-height: 25.2px;font-family: 'Open Sans', sans-serif;">{{$dev["nb_tot_sac"]}}</span></p>
-                                                                              </div>
-                                                                           </td>
-                                                                        </tr>
-                                                                     </tbody>
-                                                                  </table>
-                                                                  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                                                     <tbody>
-                                                                        <tr>
-                                                                           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Raleway',sans-serif;" align="left">
-                                                                              <div class="v-text-align" style="color: #636262; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 18px; line-height: 25.2px;font-family: 'Open Sans', sans-serif;">prix exw {{$dev["pu_sac_prix_exw"]}}€</span></p>
+                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 18px; line-height: 25.2px;font-family: 'Open Sans', sans-serif;">{{number_format($dev["ptr_prix_par_sac_dap"], 2)}}€</span></p>
                                                                               </div>
                                                                            </td>
                                                                         </tr>
@@ -614,7 +607,7 @@
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 20px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <div class="v-text-align" style="color: #636262; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 18px; line-height: 25.2px;font-family: 'Open Sans', sans-serif;">{{$montantPT}}€</span></p>
+                                                                                 <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 18px; line-height: 25.2px;font-family: 'Open Sans', sans-serif;">{{ $dev["nb_tot_sac"] * number_format($dev["ptr_prix_par_sac_dap"], 2)}}€</span></p>
                                                                               </div>
                                                                            </td>
                                                                         </tr>
@@ -639,7 +632,7 @@
                                  </div>
                               </div>
                                  @php
-                                    $sommeTotal = $sommeTotal + $dev["Total"] ;
+                                    $sommeTotal = $sommeTotal + ($dev["nb_tot_sac"] * number_format($dev["ptr_prix_par_sac_dap"], 2)) ;
                                  @endphp
                               @endforeach
                               
@@ -647,7 +640,7 @@
 
                               <!-- Ligne Somme total du devis -->
                               <div class="u-row-container v-row-background-image--outer" style="padding: 0px;background-color: transparent">
-                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #bdbfff;">
+                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #c74886;">
                                     <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
                                        <!--[if (mso)|(IE)]>
                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -779,13 +772,13 @@
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px 10px 15px;font-family:'Raleway',sans-serif;" align="left">
                                                                               <div class="v-text-align" style="color: #333333; line-height: 150%; text-align: left; word-wrap: break-word;">
-                                                                                 <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 16px; line-height: 24px;">Ce dévis est un dévis non détaillé, pour télécharger le dévis détaillé avec le coulisse, veuillez svp cliquez sur le boutton <strong>Téléchager le dévis<strong> ci-dessous.</span></p>
+                                                                                 <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 16px; line-height: 24px;">Ce dévis est un dévis non détaillé, cliquez sur le bouton <strong><a href="{{$urls['telechargerUrl']}}">Téléchager devis</a></strong> pour téléchager le devis détaillé. Si le devis vous convient vous pouvez directement <strong><a href="{{$urls['passerCommandeUrl']}}">Passer la commande</a><strong></span></p>
                                                                               </div>
                                                                            </td>
                                                                         </tr>
                                                                      </tbody>
                                                                   </table>
-                                                                  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                                  <!-- <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                                                      <tbody>
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px 10px 15px;font-family:'Raleway',sans-serif;" align="left">
@@ -795,8 +788,8 @@
                                                                            </td>
                                                                         </tr>
                                                                      </tbody>
-                                                                  </table>
-                                                                  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                                  </table> -->
+                                                                  <!-- <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                                                      <tbody>
                                                                         <tr>
                                                                            <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px 30px 15px;font-family:'Raleway',sans-serif;" align="left">
@@ -807,7 +800,7 @@
                                                                            </td>
                                                                         </tr>
                                                                      </tbody>
-                                                                  </table>
+                                                                  </table> -->
                                                                   <!--[if (!mso)&(!IE)]><!-->
                                                                </div>
                                                                <!--<![endif]-->
@@ -885,7 +878,7 @@
                               <!-- Div des boutons action (Télécharger et Passer la commande) -->
                               <div id="u_row_6" class="u-row-container v-row-background-image--outer" style="padding: 0px;background-color: transparent">
                                  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-                                    <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-image: url('https://cdn.templates.unlayer.com/assets/1619852196047-cc.png');background-repeat: no-repeat;background-position: center top;background-color: transparent;">
+                                    <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-repeat: no-repeat;background-position: center top;background-color: transparent;">
                                        <!--[if (mso)|(IE)]>
                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                           <tr>
@@ -914,7 +907,7 @@
                                                                                              <w:anchorlock/>
                                                                                              <center style="color:#FFFFFF;font-family:'Raleway',sans-serif;">
                                                                                                 <![endif]-->
-                                                                                                <a href="" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Raleway',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #1f2060; border-radius: 13px; -webkit-border-radius: 13px; -moz-border-radius: 13px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+                                                                                                <a href="{{$urls['telechargerUrl']}}" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Raleway',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #1f2060; border-radius: 13px; -webkit-border-radius: 13px; -moz-border-radius: 13px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                                                                                                 <span class="v-padding" style="display:block;padding:12px 35px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Télécharger Devis</span></span>
                                                                                                 </a>
                                                                                                 <!--[if mso]>
@@ -958,7 +951,7 @@
                                                                                              <w:anchorlock/>
                                                                                              <center style="color:#FFFFFF;font-family:'Raleway',sans-serif;">
                                                                                                 <![endif]-->
-                                                                                                <a href="" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Raleway',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #1a8618; border-radius: 13px; -webkit-border-radius: 13px; -moz-border-radius: 13px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+                                                                                                <a href="{{$urls['passerCommandeUrl']}}" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Raleway',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #1a8618; border-radius: 13px; -webkit-border-radius: 13px; -moz-border-radius: 13px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                                                                                                 <span class="v-padding" style="display:block;padding:12px 25px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Passer la commande</span></span>
                                                                                                 </a>
                                                                                                 <!--[if mso]>
@@ -995,7 +988,7 @@
                               
                               <!-- Div pied de page -->
                               <div class="u-row-container v-row-background-image--outer" style="padding: 0px;background-color: transparent">
-                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #1f2060;">
+                                 <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 550px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #6dbaa9;">
                                     <div class="v-row-background-image--inner" style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
                                        <!--[if (mso)|(IE)]>
                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">

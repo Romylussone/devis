@@ -16,18 +16,20 @@ class SysDevisMaker extends Mailable
     protected $nomEts;
     protected $img_src;
     protected $nomContact;
+    protected $urls;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Array $devis, $numerodevis, $nomentreprise, $nomContact)
+    public function __construct(Array $devis, $numerodevis, $nomentreprise, $nomContact, $urls)
     {
         $this->devis = $devis;
         $this->numdevis = $numerodevis;
         $this->nomEts  = $nomentreprise;        
         $this->nomContact = $nomContact;
+        $this->urls = $urls;
     }
 
     /**
@@ -44,6 +46,7 @@ class SysDevisMaker extends Mailable
                     ->with('numero', $this->numdevis)
                     ->with('sommeTotal', 0)
                     ->with('nomcontact',  $this->nomContact)
-                    ->with('entreprise', $this->nomEts);
+                    ->with('entreprise', $this->nomEts)
+                    ->with('urls', $this->urls);
     }
 }

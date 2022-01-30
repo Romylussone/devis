@@ -83,16 +83,6 @@ Route::get(
     [DevisController::class, 'afficher']
     )->name('afficherdevis')->middleware('adminauth');
 
-Route::get(
-    '/admin/gerer-ecole', 
-    [EcoleController::class, 'gererEcole']
-    )->name('admin-gerer-ecole')->middleware('adminauth');
-
-Route::get(
-    '/admin/stats-ecole',
-    [EcoleController::class, 'statsEcole']
-    )->name('admin-stats-ecole')->middleware('adminauth');
-
 //** 
 Route::get(
     '/devis',
@@ -106,6 +96,18 @@ Route::post(
     '/demande/devis/',
     [DemandeDevisController::class, 'demandeDevis']
 )->name('demande.devis');
+
+//Route Telecharger devis
+Route::get(
+    '/devis-sur-mesure/telecharger-devis/{numero_devis}/',
+    [DemandeDevisController::class, 'telechargerDevis']
+)->name('telecharger.devis');
+
+//Route Telecharger devis
+Route::get(
+    '/devis-sur-mesure/passer-commande-devis/{numero_devis}/',
+    [DemandeDevisController::class, 'telechargerDevis']
+)->name('passer.cmd.devis');
 
 
 //**

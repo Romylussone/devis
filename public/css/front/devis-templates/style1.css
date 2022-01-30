@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    background-color:white;
+}
+.header{
+    background-color: #6dbaa9;
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+}
+.logo{
+    border-radius: 10%;
+    height: 8rem;
+    align-self: center;
+}
+.cantainer-title{
+    text-align: center;
+}
+.title,.sous-title{
+    color: #fff;
+}
+.container-date{
+    background-color: #c74886;
+    border: 1rem solid #fff;
+    border-right: 0px;
+    border-top-left-radius: 400px 8rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 7rem;
+    width: 40%;
+    text-align: center;
+    text-justify: flex-end;
+    margin-bottom: -10px;
+}
+.text-date{
+    color: #fff;
+    margin-top: 40px;
+}
+  /* .container-date:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #c74886;
+  } */
+  .cards{
+      display: flex;
+      width: 100%;
+      margin-top: 10px;
+  }
+  .card{
+      background-color: #d5d8e9;
+      padding: 5px;
+      margin-top: 20px;
+      display: flex;
+      width: 49%;
+  }
+  .card .cardValue{
+      margin-left: 10px;
+  }
+  .tableau{
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+  }
+  .infoBanc thead{
+    background-color: #c74886;
+  }
+  .infoBanc table{
+    border-color: #c74886;
+  }
+  .infoBanc th{
+    color: #fff;
+  }
+  .infoBanc .infoContent{
+    border: 1px solid #c74886;
+    width: 100%;
+    text-align: start;
+  }
+  .infoBanc .infoContent div{
+    margin-left: 20px;
+  }
+  .infoBanc .infoContent div label{
+    color: #c74886;
+    margin-right: 10px;
+  }
+  .separateur{
+    color: #c74886;
+    margin: 10px;
+    font-weight: bold;
+  }
+  .infoBanc .infoContent-flex{
+    display: flex;
+  }
+  .infoComplimentaire{
+      background-color: #c74886;
+      display: flex;
+      padding: 2px 50px;
+      justify-content: space-between;
+      border-top-right-radius: 20px;
+      width: 95%;
+  }
+  .infoComplimentaire span{
+      color: #fff
+  }
+  .contact{
+    background-color: #6dbaa9;
+    display: flex;
+    padding: 20px 50px;
+    justify-content: space-around;
+    margin: 20px 0px 20px 0px;
+}
+.contact-info{
+    display: flex;
+}
+.contact-info .info{
+    flex-direction: column;
+    display: flex;
+    margin-left:10px;
+    text-align: start;
+    justify-content:center
+}
+.contact-info .info span{
+    flex-direction: column;
+    display: flex;
+    color: #fff;
+}
+.icon{
+    background-color: #c74886;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+}
+i {
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.tableau th, td{
+      text-align: center;
+      
+      }
+.infoBanc th, td{
+      text-align: center;
+      
+      }
+@media screen and (max-width: 1006px){
+.cards{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0px;
+}
+.card{
+    background-color: #d5d8e9;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+}
+.contact{
+    background-color: #6dbaa9;
+    display: block;
+    padding: 20px 50px;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}
+.contact-info{
+    display: flex;
+    margin-top: 20px;
+}
+.infoBanc .infoContent-flex{
+    display: flex;
+    flex-direction: column;
+  }
+  .infoBanc .infoContent div{
+    margin-left: 0px;
+  }
+  .logo_1{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+}
