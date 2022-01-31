@@ -15,7 +15,7 @@ class ApiUserController extends Controller
 
         $login = $request->input('login');
         $pwd = $request->input('pwd');
-        
+
         $response = ["type" => "pwd", "message" => $login.' '.$pwd];
         return response($response, 422);
         
