@@ -179,9 +179,6 @@ return [
         //Provider classe pour genérer pdf
         Barryvdh\DomPDF\ServiceProvider::class,
 
-        //Provider CORS
-        Barryvdh\Cors\ServiceProvider::class,
-
     ],
 
     /*
