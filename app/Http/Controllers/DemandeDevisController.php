@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\URL;
 
 use App\GrammageArticles;
 use App\TailleArticles;
+use App\TypeArticles;
 use App\TypeImpressionArticles;
 use App\Devis;
 use App\DetailDevis;
@@ -42,35 +43,46 @@ class DemandeDevisController extends Controller
      */
     public function demandeDevis(Request $request)
     {
+        // request()->validate([
+        //     'file'  => 'required|mimes:jpeg,jpg,png|max:20000',
+        // ]);
+
         $entreprise_id ;
         $curent_contact_id;
         $current_demande_devis_id;
-
+        
+        
         //On récupère les donnée en provenance du demandeur
         $contact_demandeur = json_decode($request->input('contacts'));
         $articles_demander = json_decode( $request->input('articles'));
         // dump($contact_demandeur);
         //Après la reception des données du demandeur de devis : on enregistres les données et on créé le devis
+        // $articles_demander->typeImpresionID;
         
+        // $response = [
+        //     "typeImpression1" => $articles_demander[0]->typeImpressionID,
+        //     "typeImpression2" => $articles_demander[1]->typeImpressionID
+        // ];
+        // return response($response, 422);
         #Etape 01 : 
         //Enregistrement info Entreprise : 
         //Si l'entreprise existe
         $ets = new Entreprise;
-        $nom_entreprise = $contact_demandeur[0]->nomEntreprise;
+        $nom_entreprise = $contact_demandeur->nomEntreprise;
         $find_ets = $ets->where('nom', $nom_entreprise)->first();
-        
+        //**
 
         if(!isset($find_ets))
         {   
             //On enregistre les infos de la nouvelle entreprise
             // 'nom', 'ville', 'pays','adresse1', 'adresse_livraison', 'adresse2', 'code_postale', 'secteur_activite'
-            $ets->nom =  $contact_demandeur[0]->nomEntreprise;
-            $ets->ville =  $contact_demandeur[0]->villeContact;
-            $ets->pays =  $contact_demandeur[0]->paysContact;
-            $ets->adresse1 =  $contact_demandeur[0]->adrContact;
-            $ets->adresse_livraison =  $contact_demandeur[0]->adrLivContact;
-            $ets->code_postale =  $contact_demandeur[0]->codePostaclContac;
-            $ets->secteur_activite =  $contact_demandeur[0]->sectactiviteEntreprise;
+            $ets->nom =  $contact_demandeur->nomEntreprise;
+            $ets->ville =  $contact_demandeur->villeContact;
+            $ets->pays =  $contact_demandeur->paysContact;
+            $ets->adresse1 =  $contact_demandeur->adrContact;
+            $ets->adresse_livraison =  $contact_demandeur->adrLivContact;
+            $ets->code_postale =  $contact_demandeur->codePostaclContact;
+            $ets->secteur_activite =  $contact_demandeur->sectactiviteEntreprise;
                        
 
             //On ajoute la nouvelle entreprise
@@ -86,7 +98,7 @@ class DemandeDevisController extends Controller
         #Etape 02 :
         #On enregistre les infos du contacts
         $contact = new Contact;
-        $email_contact = $contact_demandeur[0]->emailContact;
+        $email_contact = $contact_demandeur->emailContact;
         $find_contact = $contact->where('email', $nom_entreprise)->first();
 
         if(!isset($find_contact))
@@ -94,12 +106,12 @@ class DemandeDevisController extends Controller
             //Si le contact n'existe pas on le crée
             // 'nom', 'prenoms', 'numero_tel','email', 'fonction', 'ip', 
 
-            $contact->nom =  $contact_demandeur[0]->nomContact;
-            $contact->prenoms =  $contact_demandeur[0]->prenomsContact;
-            $contact->numero_tel =  $contact_demandeur[0]->numeroContact;
-            $contact->email =  $contact_demandeur[0]->emailContact;
+            $contact->nom =  $contact_demandeur->nomContact;
+            $contact->prenoms =  $contact_demandeur->prenomsContact;
+            $contact->numero_tel =  $contact_demandeur->numeroContact;
+            $contact->email =  $contact_demandeur->emailContact;
             $contact->entreprie_id =  $entreprise_id;
-            $contact->fonction =  isset($contact_demandeur[0]->fonction) ? $contact_demandeur[0]->fonction : "";
+            $contact->fonction =  isset($contact_demandeur->fonction) ? $contact_demandeur->fonction : "";
             $contact->ip =  $request->ip();
 
             //On ajoute le nouveau contact
@@ -127,34 +139,48 @@ class DemandeDevisController extends Controller
 
         #Etape 04 :
         #On enregistre les details de la demande de devis : Les différentes articles demandés
-        $articles_devis = new Article;
-        $gra = new GrammageArticles;
-        $taillea = new TailleArticles;
-        $typeimp = new TypeImpressionArticles;
+        // $articles_devis = new Article;
+        // $gra = new GrammageArticles;
+        // $taillea = new TailleArticles;
+        $timp = new TypeImpressionArticles;
+        // typeSac: null,
+        // typeSacID: null,
+        // couleursac: null,
+        // qtesac: null,
+        // taillesac: null,
+        // tailleanse: null,
+        // grammagesac: null,
+        // typeImpression: 'neutre',
+        // typeImpressionID: null,
+        // withLogo: null
         
         // 'code', 'type_article_id', 'taille_article_id', 'grammage_article_id', 'type_impresion_article_id',
         $dataInsert = array();
         $qte_art = array();
         $nbligne = Article::count();
         foreach($articles_demander as $k => $v)
-        {
-            $taile_hls = explode('X', strtoupper($v[0]->tailleSac));
-
-            $tid = $taillea->where(['hauteur' => $taile_hls[0], 'largeur'=> $taile_hls[1], 'souflet'=> $taile_hls[2]])->get('id')->first();
-            $gra_id = $gra->where('grammage', $v[0]->grammageSac)->get('id')->first();
-            $nbcolti_id = $typeimp->where('nb_couleur', $v[0]->nbCouleurImpression)->get('id')->first();
+        {        
 
             $nbligne = $nbligne + 1;
-            $dataInsert[$k]["code"] = substr(strtoupper($v[0]->typeSac), 0, 3)."".sprintf("%'.010d", $nbligne);
-            $dataInsert[$k]["type_article_id"] = $v[0]->typeSacID;
-            $dataInsert[$k]["taille_article_id"] = $tid->id;
-            $dataInsert[$k]["grammage_article_id"] = $gra_id->id;
-            $dataInsert[$k]["type_impresion_article_id"] = $nbcolti_id->id;
-            $dataInsert[$k]["lienCouleur"] = $v[0]->lienTypeSac;
+            $dataInsert[$k]["code"] = substr(strtoupper($v->typeSac), 0, 3)."".sprintf("%'.010d", $nbligne);
+            $dataInsert[$k]["type_article_id"] = $v->typeSacID;
+            $dataInsert[$k]["taille_article_id"] = $v->taillesac;
+            $dataInsert[$k]["grammage_article_id"] = $v->grammagesac;
+            $dataInsert[$k]["type_impresion_article_id"] = is_null($v->typeImpressionID) ? $timp->where('libelle', 'neutre')->get('id')->first()->id : $v->typeImpressionID;
+            $dataInsert[$k]["couleur_article_id"] = $v->couleursac;
+            if(!is_null($v->tailleanse) && $v->tailleanse !="")
+            {
+                $dataInsert[$k]["taille_anse_id"] = $v->tailleanse;
+            }
+            else{
+                $dataInsert[$k]["taille_anse_id"] = null;
+            }
+            
+            // $dataInsert[$k]["lienCouleur"] = $v->lienTypeSac;
             // $dataInsert[$k]["created_at"] = "'".now()."'";
             // $dataInsert[$k]["updated_at"] = "'".now()."'";
 
-            $qte_art[$k] = $v[0]->qteSac;
+            $qte_art[$k] = $v->qtesac;
         }
         // dd($dataInsert);
 
@@ -180,8 +206,17 @@ class DemandeDevisController extends Controller
         $r = DB::select(' select sp_make_devis(?) as devis_id', array($current_demande_devis_id));
         $new_created_devis_id = $r[0]->devis_id;
 
+        #on enregistre le logo du client
+        // $path = $request->file('logo1')->store(
+        //     'avatars/'.$current_demande_devis_id, 'public'
+        // );
+
         #On envoie le devis au demandeur
         $this->sendDevisByMail($new_created_devis_id);
+
+        #4 on retourne le message
+        $response = ["type" => "demondeok", "message" => "Votre demande de devis a bien été traitée, un mail vous sera envoyé avec le devis"];
+        return response($response, 200);
     }
     
     /**
@@ -219,9 +254,6 @@ class DemandeDevisController extends Controller
         \Illuminate\Support\Facades\Mail::to($tabemail[0]->email)
             ->cc('support@gssoftai.com')
             ->send($devis_mail_content);
-
-        #4 on retourne le message
-        return json_encode(array('type' =>'ok', 'message' =>'Devis envoyé avec succès'));
     }
     
     /**

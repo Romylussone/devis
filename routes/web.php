@@ -12,6 +12,7 @@ use App\Http\Middleware\AdminAuthenticate;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DevisController;
 use App\Http\Controllers\DemandeDevisController;
+use App\Http\Controllers\ApiUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +115,11 @@ Route::get(
 Route::get(
     '/testenvoiedeevis',
     [DemandeDevisController::class, 'testenvoieEmail']
+);
+
+Route::get(
+    '/generateApiToken',
+    [ApiUserController::class, 'defaulNouvellapiUser']
 );
 
 

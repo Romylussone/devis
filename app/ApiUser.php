@@ -2,13 +2,14 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class ApiUser extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
     
     public $table = "api_users";
     protected $primaryKey = 'id';
@@ -19,10 +20,20 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'nom',
+        'nom','pwd'
     ];
 
     /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'pwd',
+    ];
+    
+
+     /**
      * username
      *
      * @return void
@@ -31,5 +42,4 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return 'nom';
     }
-
 }

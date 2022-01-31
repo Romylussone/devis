@@ -15,6 +15,6 @@ class Articles extends Model
      * @var array
      */
     protected $fillable = [
-        'code', 'type_article_id', 'taille_article_id', 'grammage_article_id', 'type_impresion_article_id','lienCouleur'
+        'code', 'type_article_id', 'taille_article_id', 'grammage_article_id','taille_anse_id', 'type_impresion_article_id','couleur_article_id', 'lienCouleur'
     ];
 }
