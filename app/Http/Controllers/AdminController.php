@@ -30,9 +30,9 @@ class AdminController extends Controller
         ');
 
         return view('admin.home')
-        -with('nb_commande', $nb_commande)
-        -with('nb_client', $nb_client)
-        -with('nb_demande_devis', $nb_demande_devis);
+        ->with('nb_commande', $nb_commande)
+        ->with('nb_client', $nb_client)
+        ->with('nb_demande_devis', $nb_demande_devis);
     }
     
     /**
