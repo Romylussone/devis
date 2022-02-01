@@ -29,11 +29,13 @@ use App\Http\Controllers\ApiUserController;
 //     return $request->user();
 // });
 
+header('Access-Control-Allow-Origin: *gssoftai.com, *127.0.0.1');
+
 //Route demande de devis
 Route::post(
     '/demande/devis/',
     [DemandeDevisController::class, 'demandeDevis']
-)->name('demande.devis');
+)->name('api.demande.devis');
 
 
 Route::post(

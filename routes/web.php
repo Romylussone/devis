@@ -30,7 +30,7 @@ use App\Http\Controllers\ApiUserController;
 Route::get(
     '/', 
     [AdminController::class, 'index']
-    )->name('admin-home')->middleware('adminauth');
+    )->name('default.admin-home')->middleware('adminauth');
 
 
 Route::post('/admin/connexion', [AdminController::class, 'connexion'])->name('admin.connexion');
@@ -124,19 +124,19 @@ Route::get(
 
 
 //Route de test
-if(env('APP_ENV') == 'local')
-{
-    Route::get('/admin/test/{n}', function ($n) {
-        $route = Route::current();
-        $param = Route::current()->parameters['n'];
+// if(env('APP_ENV') == 'local')
+// {
+//     Route::get('/admin/test/{n}', function ($n) {
+//         $route = Route::current();
+//         $param = Route::current()->parameters['n'];
     
-        $name = Route::currentRouteName();
+//         $name = Route::currentRouteName();
     
-        $action = Route::currentRouteAction(); 
+//         $action = Route::currentRouteAction(); 
         
-        dump($route);
-        dump($param);
-        dump($name);
-        dump($action);
-    });
-}
+//         dump($route);
+//         dump($param);
+//         dump($name);
+//         dump($action);
+//     });
+// }
