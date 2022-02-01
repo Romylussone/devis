@@ -33,55 +33,55 @@ use App\Http\Controllers\ApiUserController;
 
 //Route demande de devis
 Route::match(['get', 'post'],
-    '/demande/devis/',
+    '/demande/devis',
     [DemandeDevisController::class, 'demandeDevis']
 )->name('api.demande.devis');
 
 
 Route::post(
-    '/login/',
+    '/login',
     [ApiUserController::class, 'login']
 )->name('api.login');
 
 //
 Route::get(
-    '/grammage/get/',
+    '/grammage/get',
     [GrammageController::class, 'index']
 )->name('grammage.get');
 
 Route::get(
-    '/taille-article/get/',
+    '/taille-article/get',
     [TailleArticleController::class, 'index']
 )->name('taiile.article.get');
 
 
 Route::get(
-    '/type-article/get/',
+    '/type-article/get',
     [TypeArticleController::class, 'index']
 )->name('type.article.get');
 
 
 Route::get(
-    '/list-qte-article/get/',
+    '/list-qte-article/get',
     [ListQteArticleController::class, 'index']
 )->name('list.qte.article.get');
 
 Route::get(
-    '/type-impression-article/get/',
+    '/type-impression-article/get',
     [TypeImpressionController::class, 'index']
 )->name('type.impression.article.get');
 
 Route::get(
-    '/secteur-activite-entreprise/get/',
+    '/secteur-activite-entreprise/get',
     [SecteurActiviteController::class, 'index']
 )->name('secteur.activite.ets.get');
 
 Route::get(
-    '/taiile-anse/get/',
+    '/taiile-anse/get',
     [TailleAnseController::class, 'index']
 )->name('taille.anse.get');
 
 Route::get(
-    '/colors-article/get/',
+    '/colors-article/get',
     [ListCouleurController::class, 'index']
 )->name('color.article.get');
