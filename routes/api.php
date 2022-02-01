@@ -33,13 +33,13 @@ use App\Http\Controllers\ApiUserController;
 Route::post(
     '/demande/devis/',
     [DemandeDevisController::class, 'demandeDevis']
-)->name('demande.devis')->middleware('cors');
+)->name('demande.devis');
 
 
 Route::post(
     '/login/',
     [ApiUserController::class, 'login']
-)->name('api.login')->middleware('cors');
+)->name('api.login');
 
 //
 Route::get(
@@ -50,13 +50,13 @@ Route::get(
 Route::get(
     '/taille-article/get/',
     [TailleArticleController::class, 'index']
-)->name('taiile.article.get')->middleware('cors');
+)->name('taiile.article.get');
 
 
 Route::get(
     '/type-article/get/',
     [TypeArticleController::class, 'index']
-)->name('type.article.get')->middleware('cors');
+)->name('type.article.get');
 
 
 Route::get(
@@ -67,19 +67,19 @@ Route::get(
 Route::get(
     '/type-impression-article/get/',
     [TypeImpressionController::class, 'index']
-)->name('type.impression.article.get')->middleware('cors');
+)->name('type.impression.article.get');
 
 Route::get(
     '/secteur-activite-entreprise/get/',
     [SecteurActiviteController::class, 'index']
-)->name('secteur.activite.ets.get')->middleware('cors');
+)->name('secteur.activite.ets.get');
 
 Route::get(
     '/taiile-anse/get/',
     [TailleAnseController::class, 'index']
-)->name('taille.anse.get')->middleware('cors');
+)->name('taille.anse.get');
 
 Route::get(
     '/colors-article/get/',
     [ListCouleurController::class, 'index']
-)->name('color.article.get')->middleware('cors');
+)->name('color.article.get');
