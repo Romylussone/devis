@@ -19,7 +19,7 @@
             <div class="grey-circle-profile-icon">
               <i class="mdi mdi-receipt"></i>
             </div>
-            <h2 class="mb-0 mt-3">10 400</h2>
+            <h2 class="mb-0 mt-3">{{$nb_demande_devis[0]->nb_demande_devis}}</h2>
             <h5 class="font-weight-normal mb-3">Demandes devis</h5>
             <!-- <p class="text-medium m-0">  30%</p> -->
           </div>
@@ -31,7 +31,7 @@
             <div class="grey-circle-profile-icon">
               <i class="mdi mdi-briefcase-upload-outline"></i>
             </div>
-            <h2 class="mb-0 mt-3">100 000</h2>
+            <h2 class="mb-0 mt-3">{{$nb_commande[0]->nb_commande}}</h2>
             <h5 class="font-weight-normal mb-3">Commandes</h5>
             <!-- <p class="text-medium m-0">  30%</p> -->
           </div>
@@ -43,7 +43,7 @@
             <div class="grey-circle-profile-icon">
               <i class="mdi mdi-account-outline"></i>
             </div>
-            <h2 class="mb-0 mt-3">109 000</h2>
+            <h2 class="mb-0 mt-3">{{$nb_client[0]->nb_client}}</h2>
             <h5 class="font-weight-normal mb-3">Clients</h5>
             <!-- <p class="text-medium m-0"> 30%</p> -->
           </div>

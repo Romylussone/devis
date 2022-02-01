@@ -16,7 +16,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
-        \Fruitcake\Cors\HandleCors::class,   
+        \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isauthtoaccess' =>  \App\Http\Middleware\IsAuthToAcessView::class,
         'adminauth' =>  \App\Http\Middleware\AdminAuthenticate::class,
+        'cors' => \Fruitcake\Cors\HandleCors::class,
     ];
 }
