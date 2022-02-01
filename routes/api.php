@@ -29,7 +29,7 @@ use App\Http\Controllers\ApiUserController;
 //     return $request->user();
 // });
 
-header('Access-Control-Allow-Origin: *gssoftai.com, *127.0.0.1');
+// header('Access-Control-Allow-Origin: *');
 
 //Route demande de devis
 Route::post(
@@ -47,7 +47,7 @@ Route::post(
 Route::get(
     '/grammage/get/',
     [GrammageController::class, 'index']
-)->name('grammage.get')->middleware('cors');
+)->name('grammage.get');
 
 Route::get(
     '/taille-article/get/',
