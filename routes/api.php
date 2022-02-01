@@ -32,7 +32,7 @@ use App\Http\Controllers\ApiUserController;
 // header('Access-Control-Allow-Origin: *');
 
 //Route demande de devis
-Route::post(
+Route::match(['get', 'post'],
     '/demande/devis/',
     [DemandeDevisController::class, 'demandeDevis']
 )->name('api.demande.devis');
