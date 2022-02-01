@@ -242,7 +242,6 @@ class DemandeDevisController extends Controller
             where d.numero=? limit 1
         ", array($numero_devis));
         
-        
         #Création des urls signés pour Télécharger le devis et Passer la commande
         $telechargerUrl =  URL::signedRoute('telecharger.devis', ['numero_devis' => $numero_devis]);
         $passerCommandeUrl =  URL::signedRoute('passer.cmd.devis', ['numero_devis' => $numero_devis]);
