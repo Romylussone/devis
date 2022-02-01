@@ -19,6 +19,7 @@ use App\TypeArticles;
 use App\TypeImpressionArticles;
 use App\Devis;
 use App\DetailDevis;
+use App\ListeQteArticle;
 
 use App\Mail\SysDevisMaker as sendDevis;
 
@@ -180,7 +181,7 @@ class DemandeDevisController extends Controller
             // $dataInsert[$k]["created_at"] = "'".now()."'";
             // $dataInsert[$k]["updated_at"] = "'".now()."'";
 
-            $qte_art[$k] = $v->qtesac;
+            $qte_art[$k] = ListeQteArticle::where('id', $v->qtesac)->get('qte')->first()->qte;
         }
         // dd($dataInsert);
 
