@@ -19,7 +19,20 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        return view('admin.home');
+        $nb_demande_devis =  DB::select('
+            select count(*) nb_demande_devis from demande_devis
+        ');
+        $nb_client =  DB::select('
+            select count(*) nb_client from clients
+        ');
+        $nb_commande =  DB::select('
+            select count(*) nb_commande from commandes
+        ');
+
+        return view('admin.home')
+        -with('nb_commande', $nb_commande)
+        -with('nb_client', $nb_client)
+        -with('nb_demande_devis', $nb_demande_devis);
     }
     
     /**
