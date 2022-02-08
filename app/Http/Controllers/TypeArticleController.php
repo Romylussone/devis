@@ -13,8 +13,8 @@ class TypeArticleController extends Controller
      * @return void
      */
     public function index()
-    {
-        return Model::all(['id', 'libelle as name', 'nom_fichier_img as filename']);
+    {        
+        return Model::where('statut', '=', 'published')->get(['id', 'libelle as name']);
     }
 
     

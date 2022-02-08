@@ -20,7 +20,7 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-article" aria-expanded="false" aria-controls="ui-article">
         <span class="menu-title">Articles</span>
         <i class="menu-arrow"></i>
@@ -36,7 +36,27 @@
           <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('afficherarticle', 'lami')}}">Laminé</a></li>
         </ul>
       </div>
+    </li> -->
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-article" aria-expanded="false" aria-controls="ui-article">
+        <span class="menu-title">Formulaire</span>
+        <i class="menu-arrow"></i>
+        <i class="  mdi mdi-briefcase menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-article">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.forme.sac.vue')}}">Liste formes sac</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.couleur.sac.vue')}}">Liste couleurs sac</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.taille.sac.vue')}}">Liste tailles sac</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.qte.sac.vue')}}">Liste qte sac</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.grammage.sac.vue')}}">Liste grammages sac</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.taille.anse.sac.vue')}}">Liste tailles anses</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#" blink="{{route('admin.form.ajouter.vue')}}">Ajouter nouvel élément</a></li>
+        </ul>
+      </div>
     </li>
+
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-devis" aria-expanded="false" aria-controls="ui-devis">
         <span class="menu-title">Devis</span>

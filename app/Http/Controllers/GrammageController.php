@@ -16,7 +16,7 @@ class GrammageController extends Controller
      */
     public function index()
     {
-        $data = Model::all(['id', 'libelle as name']);
+        $data = Model::where('statut', '=', 'published')->get(['id', 'libelle as name']);
         
         return response()->json($data);
     }

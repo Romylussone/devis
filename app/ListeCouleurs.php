@@ -15,6 +15,6 @@ class ListeCouleurs extends Model
      * @var array
      */
     protected $fillable = [
-        'libelle', 'code_hex',
+        'libelle', 'code_hex','statut',
     ];
 }

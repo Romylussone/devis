@@ -15,6 +15,6 @@ class TypeArticles extends Model
      * @var array
      */
     protected $fillable = [
-        'libelle', 'nom_fichier_img',
+        'libelle', 'nom_fichier_img', 'statut',
     ];
 }

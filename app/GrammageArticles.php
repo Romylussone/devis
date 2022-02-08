@@ -15,6 +15,6 @@ class GrammageArticles extends Model
      * @var array
      */
     protected $fillable = [
-        'libelle', 'grammage',
+        'libelle', 'grammage','statut'
     ];
 }

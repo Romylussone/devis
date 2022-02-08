@@ -14,7 +14,7 @@ class TailleArticleController extends Controller
      */
     public function index()
     {
-        return Model::all(['id', 'libelle as name']);
+        return Model::where('statut', '=', 'published')->get(['id', 'libelle as name']);
     }
 
     

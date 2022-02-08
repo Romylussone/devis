@@ -15,6 +15,6 @@ class TailleArticles extends Model
      * @var array
      */
     protected $fillable = [
-        'hauteur', 'largeur', 'souflet', 'libelle',
+        'hauteur', 'largeur', 'souflet', 'libelle', 'statut',
     ];
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DevisController;
 use App\Http\Controllers\DemandeDevisController;
 use App\Http\Controllers\ApiUserController;
+use App\Http\Controllers\AdminFormManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,58 @@ Route::get(
 Route::get(
     '/admin/params',
     [AdminController::class, 'params']
-    )->name('admin-params')->middleware('adminauth');
+    )->name('admin-params')->middleware('adminauth')
+;
+
+/**
+ * 
+ * 
+ * Administration du fromularie
+ */
+Route::match(['post', 'get'],
+    '/admin/forms/vue/form-sac/{fonction?}/{id?}',
+    [AdminFormManagerController::class, 'formSacVue']
+    )->name('admin.form.forme.sac.vue')
+;
+
+Route::match(['post', 'get'],
+    '/admin/forms/vue/couleur-sac/{fonction?}/{id?}',
+    [AdminFormManagerController::class, 'couleurSacVue']
+    )->name('admin.form.couleur.sac.vue')->middleware('adminauth')
+;
+
+Route::match(['post', 'get'],
+    '/admin/forms/vue/taille-sac/{fonction?}/{id?}',
+    [AdminFormManagerController::class, 'tailleSacVue']
+    )->name('admin.form.taille.sac.vue')->middleware('adminauth')
+;
+
+Route::match(['post', 'get'],
+    '/admin/forms/vue/qte-sac/{fonction?}/{id?}',
+    [AdminFormManagerController::class, 'qteSacVue']
+    )->name('admin.form.qte.sac.vue')->middleware('adminauth')
+;
+
+Route::match(['post', 'get'],
+    '/admin/forms/vue/grammage-sac/{fonction?}/{id?}',
+    [AdminFormManagerController::class, 'grammageSacVue']
+    )->name('admin.form.grammage.sac.vue')->middleware('adminauth')
+;
+
+Route::match(['post', 'get'],
+    '/admin/forms/vue/taille-anse-sac/{fonction?}/{id?}',
+    [AdminFormManagerController::class, 'tailleAnseSacVue']
+    )->name('admin.form.taille.anse.sac.vue')->middleware('adminauth')
+;
+
+
+Route::get(
+    '/admin/forms/ajouter/nouvel-element',
+    [AdminFormManagerController::class, 'ajouterElement']
+    )->name('admin.form.ajouter.vue')->middleware('adminauth')
+;
+//-------------------
+
 
    // **Route de creation de l'amdin par defaut */
     // Route::get(
@@ -72,7 +124,8 @@ Route::post(
 Route::get(
     '/admin/article/{type}',
     [ArticleController::class, 'afficher']
-    )->name('afficherarticle')->middleware('adminauth');
+    )->name('afficherarticle')->middleware('adminauth')
+;
 
 
 /** 
