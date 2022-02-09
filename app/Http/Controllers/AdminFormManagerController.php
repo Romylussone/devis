@@ -402,6 +402,7 @@ class AdminFormManagerController extends Controller
                     //on modifie
                     $model->grammage =  $request->input('grammage');
                     $model->libelle =  ucfirst($request->input('libelle'));
+                    $model->statut =  ucfirst($request->input('statut'));
 
                     $model->save();
                     $response = ["type" =>"ok", "message" =>"Grammage de sac modifiée avec succès"];
