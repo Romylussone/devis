@@ -14,7 +14,7 @@ class ListCouleurController extends Controller
      */
     public function index()
     {
-        return Model::where('statut', '=', 'published')->all(['id', 'libelle as name']);
+        return Model::where('statut', '=', 'published')->get(['id', 'libelle as name']);
     }
     
         
